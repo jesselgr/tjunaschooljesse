@@ -10,24 +10,71 @@ body {
 p {
     font-family: sans-serif;
 }
+h1 {
+    font-family: "Trajan-pro", sans-serif;
+}
 header {
     width:100%;
+    background-image:  url('img/header.jpg')
     
 }
-header ul{
-    padding-left: 0;
-    text-align: center;
+    header ul{
+        padding-left: 0;
+        text-align: center;
+
+    }
+
+    header li {
+        display: inline;
+        
+    }
+
+    header h1 {
+        float: right;
+        margin-right: 52%;
+        color: #FFFFFF;
+        font-family: "Trajan-pro", sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+    }
+nav {
+      width: 100%;
+      float: left;
+      margin: 0 0 3em 0;
+      padding: 0;
+      list-style: none;
+      background-color: #f2f2f2;
+      border-bottom: 1px solid #ccc; 
+      border-top: 1px solid #ccc; 
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 20px;
 
 }
+    
+    nav li {
+        border-left: 1px solid #ccc; 
+    }
+    nav li:last-child{
+    border-right: 1px solid #ccc; 
+    }
+        nav li a {
+                  display: inline;
+                  padding: 8px 15px;
+                  text-decoration: none;
+                  font-weight: bold;
+                  color: #069;
+                  
+            }
 
-header li {
-    display: inline;
-    padding-right: 30px;
-}
 
-header h1 {
-    float: right;
-    margin-right: 39%;
+        nav li a:hover {
+              color: orange;
+              background-color: #fff; 
+          }
+
+.logo {
+    margin-bottom: -4px;
 }
 
 
@@ -35,24 +82,25 @@ header h1 {
     width:80%;
     float: left;
     display: block;
-    background-color: blue;
-    
 }
+    .content p {
+        padding-right: 50px;
+    }
 .sidebar {
     width: 20%;
     float: right;
 }
-.sidebar ul li{
-    list-style: decimal;
-}
+    .sidebar ul li{
+        list-style: decimal;
+    }
 .content2 {
+    border-top: 1px solid #ccc;
     clear:both;
     margin-bottom: 200px;
 }
-
 footer {
 width:100%;
-background-color: red;
+background-color: #000000;
 overflow: hidden;
 text-align: center;
 margin-top: -150px;
@@ -61,25 +109,28 @@ position: absolute;
 left: 0;
 bottom: 0;
 height: 150px;
+color: #FFFFFF;
+}
+    footer ul {
+        padding: 0;
+        list-style: none;
+
+    }
+    footer a {
+        color: orange;
+    }
+
+        .footertextleft { 
+            float: left; 
+            width: 33%; 
 
 
-}
-footer ul {
-    padding: 0;
-    list-style: none;
-}
-
-.footertextleft { 
-    float: left; 
-    width: 33%; 
-
-
-}
-.footertextright { 
-    float: right; 
-    width: 33%; 
-}
-.footertextcenter{ 
-    display: inline-block;
-     width: 33%; 
-}
+        }
+        .footertextright { 
+            float: right; 
+            width: 33%; 
+        }
+        .footertextcenter{ 
+            display: inline-block;
+             width: 33%; 
+        }
