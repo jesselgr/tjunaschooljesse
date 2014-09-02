@@ -74,8 +74,6 @@ nav {
     padding-right: 20px;
 }
 
-
-
 footer {
 width:100%;
 background-color: #000000;
@@ -92,18 +90,9 @@ color: #FFFFFF;
 
   footer ul {padding: 0; list-style: none;}
   footer a {color: orange;}
-        .one { 
-            float: left; 
-            width: 33%; 
-        }
-        .two { 
-            float: right; 
-            width: 33%; 
-        }
-        .three{ 
-            display: inline-block;
-             width: 33%; 
-        }
+        .one {float: left; width: 33%;}
+        .two {float: right; width: 33%;}
+        .three{display: inline-block; width: 33%;}
 
 @media screen and (max-width: 720px) {
   .content {
@@ -128,6 +117,7 @@ color: #FFFFFF;
     margin-bottom: 450px;
   }
 }  
+
 @media screen and (max-width: 480px) {
   nav li {border-left: 0px;}
   nav li:last-child { border-right: 0px;}
