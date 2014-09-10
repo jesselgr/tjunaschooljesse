@@ -49,12 +49,13 @@ class Blog extends CI_Controller {
     {
         //$data['query'] = $this->BLOG->insert_entry();
         //redirect('blog');
+        $data['topic_entry']= $this->input->post('topic_entry');
         $data['title']      = $this->input->post('title');
         $data['body']       = $this->input->post('body');
         $data['user']       = $this->input->post('user');
 
         $this->BLOG->insert_entry($data);
-        $data['id'] = $this->db->insert_id();
+        $data['topic_id'] = $this->db->insert_id();
         echo json_encode($data);
     }
     /**
@@ -82,13 +83,13 @@ class Blog extends CI_Controller {
     */
     function comment_insert()
     {
-        $data['author']     = $this->input->post('author');
+        $data['title']     = $this->input->post('title');
         $data['body']       = $this->input->post('body');
         $data['entry_id']   = $this->input->post('entry_id');
         $data['user']       = $this->input->post('user');
 
         $this->BLOG->insert_comments($data);
-        $data['id'] = $this->db->insert_id();
+        $data['comment_id'] = $this->db->insert_id();
         echo json_encode($data);
         // redirect('blog/comments/'.$_POST['entry_id']);
     }
@@ -100,7 +101,7 @@ class Blog extends CI_Controller {
     function comment_delete()
     {
         // declare $data 
-        $data['id']     = $this->input->post('delete_id');
+        $data['comment_id']     = $this->input->post('delete_id');
 
         $result = $this->BLOG->delete_comments($data);
         echo json_encode(array('message'=>$result));
@@ -112,7 +113,7 @@ class Blog extends CI_Controller {
      */
     function comment_edit()
     {
-        $data['id']         = $this->input->post('id');
+        $data['comment_id']         = $this->input->post('comment_id');
      
         $result = $this->BLOG->edit_comments($data);
         echo json_encode($result);

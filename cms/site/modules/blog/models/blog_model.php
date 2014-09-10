@@ -47,24 +47,24 @@ class Blog_model extends CI_Model {
         
         $this->db->delete('comments',$data);
         $id = $_POST['delete_id'];
-        $query = "delete from comments where ID = $id";
+        $query = "delete from comments where ID = $comment_id";
         return $query;
     }
 
     function edit_comments($data)
     {
-        $id = $_POST['id'];
+        $comment_id = $_POST['comment_id'];
         $body = $_POST['edit_body'];
 
         $data = array(
             'body' => $body
             );
 
-        $this->db->where('id', $id);
+        $this->db->where('comment_id', $comment_id);
         $this->db->update('comments',$data);
         
         $result = array(
-            'id'=>$id,
+            'comment_id'=>$comment_id,
             'message'=>$body,
            
         );

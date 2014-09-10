@@ -80,12 +80,12 @@ $(document).ready(function() {
             {
             
                 // html veranderen..
-                var block = $("<div class='commentblock' id='"+data.id+"'></div>");
-                var title = $("<h2>"+data.author+"</h2>");
+                var block = $("<div class='commentblock' id='"+data.comment_id+"'></div>");
+                var title = $("<h2>"+data.title+"</h2>");
                 var body = $("<p>"+data.body+"</p>");
                 var user = $("<p>"+'Geschreven door: '+data.user+"</p>");
-                var button2 = $("<button class='edit' id='"+data.id+"'>Aanpassen</button>");
-                var button = $("<button class='delete' id='"+data.id+"'>Verwijder</button><hr>");
+                var button2 = $("<button class='edit' id='"+data.comment_id+"'>Aanpassen</button>");
+                var button = $("<button class='delete' id='"+data.comment_id+"'>Verwijder</button><hr>");
                 var end = $();
                 // html element maken voor comment
 
@@ -134,10 +134,17 @@ $(document).ready(function() {
             <h3>Pas hier uw reactie aan</h3>\
             <form id="editform" class="editform" action="'+base_url+'blog/comment_edit" method="post">\
             <p><textarea name="edit_body" rows ="10">'+text+'</textarea></p>\
-            <p><input type="submit" value="Pas aan"/><p/>\
-            <input type="hidden" name="id" value="'+edit_id+'">\
+            <p><input type="submit" value="Pas aan" id="pasaan"/><p/>\
+            <input type="hidden" name="comment_id" value="'+edit_id+'">\
             </form>\
             <hr></div>');
+
+        $('#comments').on('click', "#pasaan", function(event){
+        
+        $("#textedit").hide(600);
+    });
+
+
     });
 
     
@@ -160,10 +167,10 @@ $(document).ready(function() {
                 dataType: 'json',
                 success  : function(data)
                     {
-                    var id = data.id;
+                    var comment_id = data.comment_id;
                     var body = data.message;
                     // html veranderen..
-                    var comment = $('#'+id);
+                    var comment = $('#'+comment_id);
                     comment.find('p').first().html(body);
 
                 // html element maken voor comment
@@ -195,11 +202,11 @@ $(document).ready(function() {
             success  : function(data)
             {
                 // html veranderen..
-                var block = $("<div class='postmessage' id='"+data.id+"'></div>");
+                var block = $("<div class='postmessage' id='"+data.topic_id+"'></div>");
                 var title = $("<h2>"+data.title+"</h2>");
                 var body = $("<p>"+data.body+"</p>");
                 var user = $("<p>"+'Geschreven door: '+data.user+"</p>");
-                var reactie = $("<a href="+base_url+"blog/comments/"+data.id+">Reacties</a><hr>");
+                var reactie = $("<a href="+base_url+"blog/comments/"+data.topic_id+">Reacties</a><hr>");
                 var end = $();
                 // html element maken voor comment
 

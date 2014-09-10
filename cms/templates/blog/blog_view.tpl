@@ -21,13 +21,13 @@
 
 <div id="post">
 	{foreach from=$result item=row}
-		<div class="postmessage" id="{$row.id}">
+		<div class="postmessage" id="{$row.topic_id}">
  			<h2>{$row.title}</h2>
  			<p>{$row.body}</p>
  			<p>Geschreven door: {$row.user}</p>
 			{if $this->session->userdata('username') != NULL}
 
- 				<p>{anchor('blog/comments/'|cat:$row.id, 'Reacties')}</p>
+ 				<p>{anchor('blog/comments/'|cat:$row.topic_id, 'Reacties')}</p>
 
 			{/if}
  			<hr>
@@ -38,6 +38,7 @@
 {if $this->session->userdata('username') != NULL}
 	<h2>Berichten toevoegen</h2>
 	{form_open('blog/entry_insert','id="postform"')} 
+	{form_hidden('topic_entry', $this->uri->segment(4))} 
 	<p><input type="text" name="title" placeholder="Titel"/></p>
 	<p><textarea name="body" rows="10" ></textarea></p>
 	{form_hidden('user', $this->session->userdata('username'))} 
