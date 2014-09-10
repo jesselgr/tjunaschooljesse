@@ -1,0 +1,6 @@
+/*
+	Tjuna
+*/
+$(document).ready(function() {
+
+});

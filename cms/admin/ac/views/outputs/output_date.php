@@ -1,0 +1,1 @@
+<?=form_input(array('id'=>$key,'name'=>$key, 'class'=> 'inputField datePicker small'), $value);

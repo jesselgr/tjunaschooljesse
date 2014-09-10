@@ -1,0 +1,136 @@
+html, body {height: 100%;}
+body{
+	background: #eee;
+	position: relative;
+	font-family: "Helvetica Neue", helvetica;
+}
+
+header, h1,h2{
+	font-family: "Unica One";
+}
+
+.wrapper{
+	margin: 40px auto;
+	border-radius: 10px;
+	width: 860px;
+	background: #eee;
+	overflow: hidden;
+	min-height: 100%;
+	padding-bottom: 50px;
+	background: #fefefe;
+	padding: 20px;
+}
+.headerWrapper{
+	background: #333;
+/*	position: absolute;
+	top: 0;
+	left: 0;*/
+	width: 100%;
+	height: 80px;
+	box-shadow: inset 0px -2px 12px #266, 0px 1px 3px #6aa;
+	border-bottom: 1px solid #266;
+}
+header{
+	display: block;
+	width: 900px;
+	margin:  0 auto;
+	height: 100%;
+	position: relative;;
+/*	overflow: hidden;*/
+}
+
+	header .logo{
+		background: url(../img/ac/ac_logo_small.png) no-repeat center left;
+		padding:  0 0 0 40px;
+		text-transform: uppercase;;
+		margin: 0;
+		line-height: 80px;
+		
+	}
+	header nav{
+		position: absolute;
+		top: 0px;
+		left: 280px;
+	}
+	header nav ul, .languageSelectBox ul{
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+		display: block;
+	}
+		header nav ul li{
+			display: inline-block;
+
+			border-left: 1px solid #777;
+		}
+		header nav ul li:last-child{
+			border-right: 1px solid #777;
+		}
+			
+			nav > ul > li ul {
+			background: #222;
+			border-bottom: 2px solid #AAA;
+			display: none;
+			position: absolute;
+			}
+			
+			header nav li a{
+				height: 70px;
+				line-height: 70px;
+				padding: 5px 10px;
+				display: block;
+				text-transform: uppercase;
+				text-decoration: none;
+				vertical-align: middle;
+				
+			}
+				header nav li:hover a, header nav li a.active{
+					background: #444;
+				}nav > ul li:hover > ul {
+				display: block!important;
+				}
+
+header, header a{
+	color: #fefefe;
+}
+
+.languageSelectBox{
+	position: absolute;
+	right: 0;
+	top: 0;
+/*	display: block;*/
+	min-height: 60px;
+	min-width: 125px;
+	padding: 10px;
+	border-right: 1px solid #777;
+	border-left: 1px solid #777;
+}
+	.languageSelectBox li{
+		display: none;
+	}
+	
+	.languageSelectBox:hover{
+			background: #444;
+	}
+	.languageSelectBox:hover li{
+		display: block;
+	}
+	.languageSelectBox li a:hover{font-weight: bold;}
+	
+	.contentImage img{
+		height: 100px;
+		border:3px solid #fff;
+		background-color: #eee;;
+	}
+	.contentImage{
+		float: left;
+		border: 1px solid #ddd;
+	}
+	
+footer{
+	/*margin-top: 20px;*/
+	height: 50px;
+	clear: both;
+	background: #333;
+}	
+	

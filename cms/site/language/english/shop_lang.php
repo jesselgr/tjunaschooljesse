@@ -1,0 +1,14 @@
+<?php
+//////////////////////////////////////////
+//					shops				//
+//////////////////////////////////////////
+//					overview			//
+//////////////////////////////////////////
+
+
+
+$lang['shop_overview_description'] 	= 	"This where you can select Green Hill distributor pages.";
+$lang['shop_overview_edit']			= 	"View";
+
+
+?>

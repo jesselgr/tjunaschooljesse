@@ -1,0 +1,2 @@
+RewriteCond $1 !^(third_party)
+Deny from all

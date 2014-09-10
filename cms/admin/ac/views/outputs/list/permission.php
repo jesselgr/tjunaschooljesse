@@ -1,0 +1,1 @@
+<p><?= humanize($key)?></p>
