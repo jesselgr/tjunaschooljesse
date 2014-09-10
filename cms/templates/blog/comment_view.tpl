@@ -1,11 +1,17 @@
 <h1>{$heading}</h1>
-
+<div id="subtitle">
+  {foreach from=$result2 item=row}
+    <h2>{$row.title}</h2>
+    <h3>{$row.body}<h3>
+    <hr>
+  {/foreach}
+</div>
 <div id="comments">
 {if $has_items}
 
  	{foreach from=$result item=row}
  	<div class="commentblock" id="{$row.comment_id}">
- 	<h2>{$row.title}</h2>
+ 	<h3>{$row.title}</h3>
 
   		<p>{$row.body}</p>
   		

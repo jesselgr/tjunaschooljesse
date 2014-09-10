@@ -8,6 +8,7 @@ class Blog extends CI_Controller {
         parent::__construct();
         $this->load->model('Blog_model','BLOG');
         $this->load->library('template');
+
     }
     /**
     * get title header css
@@ -36,6 +37,7 @@ class Blog extends CI_Controller {
     {
         $data['title']  = "Toevoegen";
   	    $data['heading']= "Voeg bericht toe";
+        
 
  	    $this->template->place_header($data);
         $this->load->view('entry_view', $data);
@@ -69,6 +71,9 @@ class Blog extends CI_Controller {
         
         $query              = $this->BLOG->get_comments();
         $data['result']     = $query->result_array();
+
+        $query2             = $this->BLOG->get_subtitle();
+        $data['result2']    = $query2->result_array();
         $data['has_items']  = (bool)($query->num_rows() > 0);
 
         $this->template->place_header($data);
@@ -76,6 +81,7 @@ class Blog extends CI_Controller {
         // $this->load->view('comment_view', $data);
         $this->template->place_footer($data);
     }
+
 
     /**
     * send comments to blog_model

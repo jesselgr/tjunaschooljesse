@@ -24,6 +24,13 @@ class Blog_model extends CI_Model {
         $query = $this->db->get('comments');
         return $query;
     } 
+
+    function get_subtitle()
+    {
+        $this->db->where('topic_id', $this->uri->segment(3));
+        $query = $this->db->get('entries');
+        return $query;
+    }
     /**
      * insert entries into database
      */
@@ -46,7 +53,7 @@ class Blog_model extends CI_Model {
     {
         
         $this->db->delete('comments',$data);
-        $id = $_POST['delete_id'];
+        $comment_id = $_POST['delete_id'];
         $query = "delete from comments where ID = $comment_id";
         return $query;
     }

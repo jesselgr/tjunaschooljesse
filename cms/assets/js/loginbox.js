@@ -139,11 +139,6 @@ $(document).ready(function() {
             </form>\
             <hr></div>');
 
-        $('#comments').on('click', "#pasaan", function(event){
-        
-        $("#textedit").hide(600);
-    });
-
 
     });
 
@@ -172,14 +167,14 @@ $(document).ready(function() {
                     // html veranderen..
                     var comment = $('#'+comment_id);
                     comment.find('p').first().html(body);
-
+ $("#textedit").hide(600);
                 // html element maken voor comment
 
             }
         }
         );
 
-        $("#textedit").hide(600);
+        // $("#textedit").hide(600);
     });
 
     var postform = $('#postform');
